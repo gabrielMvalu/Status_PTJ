@@ -2,7 +2,7 @@ import streamlit as st
 from datetime import datetime, timedelta
 
 # Setări inițiale
-titlu_proiect = "Numele Proiectului"
+titlu_proiect = "Brenado for House"
 descriere_proiect = "Acesta este un scurt rezumat al proiectului."
 url_github = "https://castemill.com"
 data_inceput = datetime(2024, 2, 9)
@@ -15,7 +15,7 @@ zile_trecute = (data_curenta - data_inceput).days
 progres = min(max(zile_trecute / total_zile_proiect, 0), 1)  # Asigură că progresul este între 0 și 1
 
 # Construirea paginii Streamlit
-st.title(':blue[{titlu_proiect}]')
+st.title(titlu_proiect)
 st.write(descriere_proiect)
 st.progress(progres)
 
@@ -24,6 +24,6 @@ if progres < 1.0:
 else:
     st.write("Proiectul a atins data limită!")
 
-st.markdown(f"[*Repository GitHub*]({url_github})")
+st.markdown(f"[*Partener app*]({url_github})")
 
 # Dacă dorești să adaugi mai multe elemente, poți continua cu st.write() sau alte funcții Streamlit
