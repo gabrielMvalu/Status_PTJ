@@ -26,4 +26,16 @@ else:
 
 st.markdown(f"[*Partener app*]({url_github})")
 
-# Dacă dorești să adaugi mai multe elemente, poți continua cu st.write() sau alte funcții Streamlit
+
+# Secțiunea pentru documente
+st.header("Documente Încărcate")
+for doc in documente:
+    st.subheader(doc["nume"])
+    st.write(f"Stadiu: {doc['stadiu']}")
+
+# Încărcarea de noi documente
+st.header("Încărcare Documente Noi")
+uploaded_file = st.file_uploader("Alege un document", type=["pdf", "docx", "txt"])
+if uploaded_file is not None:
+    # Aici poți adăuga logica pentru procesarea și salvarea documentului încărcat
+    st.write("Document încărcat cu succes!")
