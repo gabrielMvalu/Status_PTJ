@@ -29,9 +29,19 @@ st.markdown(f"[*Partener app*]({url_github})")
 
 # Secțiunea pentru documente
 st.header("Documente Încărcate")
+# Lista de documente de exemplu
+documente = [
+    {"nume": "Document 1", "stadiu": "Încărcat"},
+    {"nume": "Document 2", "stadiu": "În procesare"},
+    {"nume": "Document 3", "stadiu": "Finalizat"}
+]
+
+# Continuarea codului...
 for doc in documente:
+    # Logica pentru a afișa fiecare document și stadiul său
     st.subheader(doc["nume"])
     st.write(f"Stadiu: {doc['stadiu']}")
+
 
 # Încărcarea de noi documente
 st.header("Încărcare Documente Noi")
